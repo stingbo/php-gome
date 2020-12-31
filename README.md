@@ -1,13 +1,13 @@
-### PHP 使用 protobuf 数据结构，调用 gome 撮单服务
+## PHP 使用 protobuf 数据结构，调用 **[gome](https://github.com/stingbo/gome)** 撮合引擎服务
 
-#### 快速使用
+### 快速使用
 
-- `protoc --php_out=. order.proto`
+- `composer require sting_bo/php-gome`
 
-#### 依赖
+### 依赖
 
-- `pecl install protobuf-{VERSION}`
+- `pecl install protobuf-{VERSION版本号}`
 
 - `pecl install grpc`
 
-#### 总结
+### 总结
