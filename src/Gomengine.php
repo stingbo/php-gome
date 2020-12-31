@@ -1,6 +1,6 @@
 <?php
 
-namespace StingBo\Gomengine;
+namespace StingBo\Gome;
 
 class Gomengine
 {
