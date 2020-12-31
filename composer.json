@@ -17,6 +17,8 @@
     },
     "autoload": {
         "psr-4": {
+            "GPBMetadata\\": "GPBMetadata/",
+            "Gome\\": "Gome/",
             "StingBo\\Gome\\": "src/"
         }
     }

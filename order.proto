@@ -1,5 +1,5 @@
 syntax = "proto3";
-package api;
+package gome;
 
 enum TransactionType {
     BUY = 0;
