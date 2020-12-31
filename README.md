@@ -1,4 +1,4 @@
-### PHP使用protobuf数据结构，调用GRPC撮单服务示例
+### PHP 使用 protobuf 数据结构，调用 gome 撮单服务
 
 #### 快速使用
 
