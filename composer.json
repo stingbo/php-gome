@@ -1,0 +1,23 @@
+{
+    "name": "sting_bo/php-gome",
+    "description": "Calling Match Engine Of Go Service",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sting Bo",
+            "email": "lianbo.wan@gamil.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "google/protobuf": "^3.14",
+        "grpc/grpc": "^1.34"
+    },
+    "autoload": {
+        "psr-4": {
+            "StingBo\\Gome\\": "src/"
+        }
+    }
+}
