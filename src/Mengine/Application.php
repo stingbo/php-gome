@@ -13,6 +13,6 @@ class Application extends ServiceContainer
      * @var array
      */
     protected $providers = [
-        \Gome\Mengine\ServiceProvider::class,
+        ServiceProvider::class,
     ];
 }

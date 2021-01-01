@@ -2,12 +2,6 @@
 
 namespace Gome\Kernel\Support;
 
-/*
- * helpers.
- *
- * @author overtrue <i@overtrue.me>
- */
-
 /**
  * Generate a signature.
  *

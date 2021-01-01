@@ -2,16 +2,22 @@
 
 namespace Gome\Kernel;
 
-class BaseClient extends \Grpc\BaseStub
+use Grpc\BaseStub;
+
+class BaseClient extends BaseStub
 {
     /**
-     * @var \Gome\Kernel\ServiceContainer
+     * @var ServiceContainer
      */
     protected $app;
     /**
      * @var string
      */
     protected $host;
+    /**
+     * @var mixed
+     */
+    protected $port;
     /**
      * @var array
      */
@@ -24,7 +30,11 @@ class BaseClient extends \Grpc\BaseStub
     /**
      * BaseClient constructor.
      *
-     * @param \Gome\Kernel\ServiceContainer $app
+     * @param ServiceContainer $app
+     * @param null $host
+     * @param null $port
+     * @param null $opts
+     * @param null $channel
      */
     public function __construct(ServiceContainer $app, $host = null, $port = null, $opts = null, $channel = null)
     {

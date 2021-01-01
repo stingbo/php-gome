@@ -13,9 +13,9 @@ class ServiceProvider implements ServiceProviderInterface
     /**
      * {@inheritdoc}.
      */
-    public function register(Container $app)
+    public function register(Container $pimple)
     {
-        $app['gome'] = function ($app) {
+        $pimple['gome'] = function ($app) {
             return new Client($app);
         };
     }

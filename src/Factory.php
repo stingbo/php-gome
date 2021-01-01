@@ -11,19 +11,22 @@
 
 namespace Gome;
 
+use Gome\Kernel\ServiceContainer;
+use Gome\Mengine\Application;
+
 /**
  * Class Factory.
  *
- * @method static \Gome\Mengine\Application gomengine(array $config)
+ * @method static Application gomengine(array $config)
  */
 class Factory
 {
     /**
      * @param string $name
-     *
-     * @return \Gome\Kernel\ServiceContainer
+     * @param array $config
+     * @return ServiceContainer
      */
-    public static function make($name, array $config)
+    public static function make(string $name, array $config): ServiceContainer
     {
         $namespace = Kernel\Support\Str::studly($name);
         $application = "\\Gome\\{$namespace}\\Application";
@@ -35,11 +38,11 @@ class Factory
      * Dynamically pass methods to the application.
      *
      * @param string $name
-     * @param array  $arguments
+     * @param array $arguments
      *
      * @return mixed
      */
-    public static function __callStatic($name, $arguments)
+    public static function __callStatic(string $name, array $arguments): ServiceContainer
     {
         return self::make($name, ...$arguments);
     }

@@ -8,7 +8,7 @@ use Pimple\Container;
 /**
  * Class ServiceContainer.
  *
- * @property \Gome\Kernel\Config $config
+ * @property Config $config
  */
 class ServiceContainer extends Container
 {
@@ -34,6 +34,9 @@ class ServiceContainer extends Container
 
     /**
      * Constructor.
+     * @param array $config
+     * @param array $prepends
+     * @param string|null $id
      */
     public function __construct(array $config = [], array $prepends = [], string $id = null)
     {
@@ -49,19 +52,9 @@ class ServiceContainer extends Container
     /**
      * @return string
      */
-    public function getId()
+    public function getId(): string
     {
         return $this->id ?? $this->id = md5(json_encode($this->userConfig));
-    }
-
-    /**
-     * @param string $id
-     * @param mixed  $value
-     */
-    public function rebind($id, $value)
-    {
-        $this->offsetUnset($id);
-        $this->offsetSet($id, $value);
     }
 
     /**
@@ -71,7 +64,7 @@ class ServiceContainer extends Container
      *
      * @return mixed
      */
-    public function __get($id)
+    public function __get(string $id)
     {
         return $this->offsetGet($id);
     }
@@ -80,9 +73,9 @@ class ServiceContainer extends Container
      * Magic set access.
      *
      * @param string $id
-     * @param mixed  $value
+     * @param mixed $value
      */
-    public function __set($id, $value)
+    public function __set(string $id, $value)
     {
         $this->offsetSet($id, $value);
     }
@@ -90,7 +83,7 @@ class ServiceContainer extends Container
     /**
      * @return array
      */
-    public function getConfig()
+    public function getConfig(): array
     {
         $base = [
             'http' => [
@@ -106,7 +99,7 @@ class ServiceContainer extends Container
      *
      * @return array
      */
-    public function getProviders()
+    public function getProviders(): array
     {
         return array_merge([
             ConfigServiceProvider::class,
