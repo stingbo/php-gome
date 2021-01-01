@@ -19,7 +19,6 @@
     "autoload": {
         "psr-4": {
             "GPBMetadata\\": "src/GPBMetadata/",
-            "Order\\": "src/Order/",
             "Gome\\": "src/"
         },
         "files": [
