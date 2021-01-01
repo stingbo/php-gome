@@ -38,8 +38,8 @@ class TestCase
         $request->setPrice($price);
         $request->setVolume($volume);
 
-        $response = $app->gome->doOrder($request);
-        //$response = $app->gome->deleteOrder($request);
+        //$response = $app->gome->doOrder($request);
+        $response = $app->gome->deleteOrder($request);
         var_dump($response->getMessage());
         var_dump($response->getCode());
     }
