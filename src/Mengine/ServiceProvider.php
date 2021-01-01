@@ -7,7 +7,6 @@ use Pimple\ServiceProviderInterface;
 
 /**
  * Class ServiceProvider.
- *
  */
 class ServiceProvider implements ServiceProviderInterface
 {

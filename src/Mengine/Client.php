@@ -26,9 +26,6 @@ class Client extends BaseClient
 
         $request = $client->doOrder($order)->wait();
         list($response, $status) = $request;
-        if (null === $status) {
-            //TODO
-        }
 
         return $response;
     }
@@ -44,9 +41,6 @@ class Client extends BaseClient
 
         $request = $client->deleteOrder($order)->wait();
         list($response, $status) = $request;
-        if (null === $status) {
-            //TODO
-        }
 
         return $response;
     }

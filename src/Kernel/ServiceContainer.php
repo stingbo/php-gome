@@ -34,10 +34,6 @@ class ServiceContainer extends Container
 
     /**
      * Constructor.
-     *
-     * @param array       $config
-     * @param array       $prepends
-     * @param string|null $id
      */
     public function __construct(array $config = [], array $prepends = [], string $id = null)
     {
@@ -117,9 +113,6 @@ class ServiceContainer extends Container
         ], $this->providers);
     }
 
-    /**
-     * @param array $providers
-     */
     public function registerProviders(array $providers)
     {
         foreach ($providers as $provider) {

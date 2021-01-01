@@ -24,8 +24,6 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
 
     /**
      * set data.
-     *
-     * @param array $items
      */
     public function __construct(array $items = [])
     {
@@ -46,8 +44,6 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
 
     /**
      * Return specific items.
-     *
-     * @param array $keys
      *
      * @return \Gome\Kernel\Support\Collection
      */
@@ -332,8 +328,6 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
 
     /**
      * var_export.
-     *
-     * @param array $properties
      *
      * @return array
      */
