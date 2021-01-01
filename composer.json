@@ -11,15 +11,24 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.2",
+        "pimple/pimple": "^3.0",
         "google/protobuf": "^3.14",
         "grpc/grpc": "^1.34"
     },
     "autoload": {
         "psr-4": {
-            "GPBMetadata\\": "GPBMetadata/",
-            "Gome\\": "Gome/",
-            "StingBo\\Gome\\": "src/"
+            "GPBMetadata\\": "src/GPBMetadata/",
+            "Order\\": "src/Order/",
+            "Gome\\": "src/"
+        },
+        "files": [
+            "src/Kernel/Support/Helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gome\\Tests\\": "tests/"
         }
     }
 }
