@@ -1,6 +1,6 @@
 <?php
 
-namespace EasyWeChat\Kernel\Exceptions;
+namespace Gome\Kernel\Exceptions;
 
 class RuntimeException extends Exception
 {
