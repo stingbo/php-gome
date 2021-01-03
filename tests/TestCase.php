@@ -6,11 +6,12 @@ include __DIR__.'/../vendor/autoload.php';
 
 use Gome\Factory;
 use Gome\Order\OrderRequest;
+use Gome\Pool\DepthRequest;
 use Grpc\ChannelCredentials;
 
 class TestCase
 {
-    public function test()
+    public function doOrder()
     {
         $config = [
             'host' => '172.22.0.4',
@@ -45,7 +46,49 @@ class TestCase
 
         return 0;
     }
+
+    public function getDepth()
+    {
+        $config = [
+            'host' => '172.22.0.4',
+            'port' => 8088,
+            'opts' => [
+                'credentials' => ChannelCredentials::createInsecure(),
+            ],
+            'channel' => [],
+        ];
+
+        $app = Factory::mengine($config);
+
+        $symbol = 'btc2usdt';
+        $transaction = 0; // 0-buy,1-sale
+        $offset = 0;
+        $count = 10;
+        $request = new DepthRequest();
+        $request->setSymbol($symbol);
+        $request->setTransaction($transaction);
+        $request->setOffset($offset);
+        $request->setCount($count);
+
+        $response = $app->pool->getDepth($request);
+        echo 'code:'.$response->getCode();
+        echo PHP_EOL;
+        echo 'msg:'.$response->getMessage();
+        echo PHP_EOL;
+        echo 'total:'.$response->getTotal();
+        echo PHP_EOL;
+        var_dump($response->getData()->count());
+        foreach ($response->getData() as $data) {
+            print_r('价格:'.$data->getP());
+            echo PHP_EOL;
+            print_r('数量:'.$data->getV());
+            echo PHP_EOL;
+        }
+
+        return 0;
+    }
 }
 
 $tc = new TestCase();
-$tc->test();
+//$tc->doOrder();
+$tc->getDepth();
