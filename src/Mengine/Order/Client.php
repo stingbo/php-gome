@@ -1,6 +1,6 @@
 <?php
 
-namespace Gome\Mengine;
+namespace Gome\Mengine\Order;
 
 use Gome\Kernel\BaseClient;
 use Gome\Order\OrderClient;
@@ -40,6 +40,7 @@ class Client extends BaseClient
 
     /**
      * 下单.
+     *
      * @param OrderRequest $order
      * @return mixed
      */
@@ -53,6 +54,7 @@ class Client extends BaseClient
 
     /**
      * 撤单.
+     *
      * @param $order
      * @return mixed
      */

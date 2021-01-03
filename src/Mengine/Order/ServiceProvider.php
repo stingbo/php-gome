@@ -1,6 +1,6 @@
 <?php
 
-namespace Gome\Mengine;
+namespace Gome\Mengine\Order;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
