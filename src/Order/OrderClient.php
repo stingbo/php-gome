@@ -15,7 +15,7 @@ class OrderClient extends BaseStub
     public function doOrder(OrderRequest $argument, $metadata = [], $options = []): UnaryCall
     {
         return $this->_simpleRequest(
-            '/api.Order/DoOrder',
+            '/Order/DoOrder',
             $argument,
             ['\Gome\Order\OrderResponse', 'decode'],
             $metadata,
@@ -26,7 +26,7 @@ class OrderClient extends BaseStub
     public function deleteOrder(OrderRequest $argument, $metadata = [], $options = []): UnaryCall
     {
         return $this->_simpleRequest(
-            '/api.Order/DeleteOrder',
+            '/Order/DeleteOrder',
             $argument,
             ['\Gome\Order\OrderResponse', 'decode'],
             $metadata,

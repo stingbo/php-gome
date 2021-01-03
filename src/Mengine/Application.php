@@ -13,6 +13,7 @@ class Application extends ServiceContainer
      * @var array
      */
     protected $providers = [
-        ServiceProvider::class,
+        Order\ServiceProvider::class,
+        Pool\ServiceProvider::class,
     ];
 }
