@@ -11,60 +11,30 @@
 
 - `composer require sting_bo/php-gome`
 
+- 下单与撤单，详见 test/TestCase.php
 ```php
-<?php
+$config = [
+    'host' => '172.22.0.4', // gRPC 地址
+    'port' => 8088, // gRPC 端口
+    'opts' => [
+        'credentials' => \Grpc\ChannelCredentials::createInsecure(),
+    ],
+    'channel' => [],
+];
 
-namespace Gome\Tests;
+$app = Factory::mengine($config);
+$response = $app->gome->doOrder(\Gome\Order\OrderRequest $request);
+$response = $app->gome->deleteOrder(\Gome\Order\OrderRequest $request);
+```
 
-include __DIR__.'/../vendor/autoload.php';
-
-use Gome\Factory;
-use Gome\Order\OrderRequest;
-use Grpc\ChannelCredentials;
-
-class TestCase
-{
-    public function test()
-    {
-        $config = [
-            'host' => '172.22.0.4', // gRPC 地址
-            'port' => 8088, // gRPC 端口
-            'opts' => [
-                'credentials' => ChannelCredentials::createInsecure(),
-            ],
-            'channel' => [],
-        ];
-
-        $app = Factory::mengine($config);
-
-        $uuid = 1;
-        $oid = 2;
-        $symbol = 'btc2usdt';
-        $transaction = 0; // 0-buy,1-sale
-        $price = 1.2;
-        $volume = 0.2;
-        $request = new OrderRequest();
-        $request->setUuid($uuid);
-        $request->setOid($oid);
-        $request->setSymbol($symbol);
-        $request->setTransaction($transaction);
-        $request->setPrice($price);
-        $request->setVolume($volume);
-
-        $response = $app->gome->doOrder($request);
-        //$response = $app->gome->deleteOrder($request);
-        echo 'code:'.$response->getCode();
-        echo PHP_EOL;
-        echo 'msg:'.$response->getMessage();
-
-        return 0;
-    }
-}
-
-$tc = new TestCase();
-$tc->test();
+- 获取交易对深度，详见 test/TestCase.php
+```php
+$app = Factory::mengine($config);
+$response = $app->pool->getDepth(\Gome\Pool\DepthRequest $request);
 ```
 
 ## 总结
 
-- 目前只有下单与撤单，获取深度等功能正在开发中 ...
+- 生成 php 定义文件：`protoc --php_out=. *.proto`
+
+- 有需求欢迎提 issue :)
