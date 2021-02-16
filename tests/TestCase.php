@@ -27,7 +27,7 @@ class TestCase
         $uuid = 1;
         $oid = 2;
         $symbol = 'btc2usdt';
-        $transaction = 0; // 0-buy,1-sale
+        $transaction = 0; // 0-buy,1-sell
         $price = 1.2;
         $volume = 0.2;
         $request = new OrderRequest();
@@ -61,7 +61,7 @@ class TestCase
         $app = Factory::mengine($config);
 
         $symbol = 'btc2usdt';
-        $transaction = 0; // 0-buy,1-sale
+        $transaction = 0; // 0-buy,1-sell
         $offset = 0;
         $count = 10;
         $request = new DepthRequest();
