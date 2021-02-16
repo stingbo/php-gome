@@ -35,6 +35,6 @@ $response = $app->pool->getDepth(\Gome\Pool\DepthRequest $request);
 
 ## 总结
 
-- 生成 php 定义文件：`protoc --php_out=. *.proto`
+- 生成 php 定义文件：`protoc --php_out=. *.proto`，项目里已生成，不用重复生成
 
 - 有需求欢迎提 issue :)
