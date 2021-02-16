@@ -34,7 +34,7 @@ class OrderRequest extends \Google\Protobuf\Internal\Message
      */
     protected $symbol = '';
     /**
-     * 交易方向，buy/sale
+     * 交易方向，buy/sell
      *
      * Generated from protobuf field <code>.gome.order.TransactionType transaction = 4;</code>
      */
@@ -65,7 +65,7 @@ class OrderRequest extends \Google\Protobuf\Internal\Message
      *     @type string $symbol
      *           交易对
      *     @type int $transaction
-     *           交易方向，buy/sale
+     *           交易方向，buy/sell
      *     @type float $price
      *           交易价格
      *     @type float $volume
@@ -156,7 +156,7 @@ class OrderRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 交易方向，buy/sale
+     * 交易方向，buy/sell
      *
      * Generated from protobuf field <code>.gome.order.TransactionType transaction = 4;</code>
      * @return int
@@ -167,7 +167,7 @@ class OrderRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 交易方向，buy/sale
+     * 交易方向，buy/sell
      *
      * Generated from protobuf field <code>.gome.order.TransactionType transaction = 4;</code>
      * @param int $var

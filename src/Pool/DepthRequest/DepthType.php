@@ -20,9 +20,9 @@ class DepthType
     /**
      * 只获取卖方深度
      *
-     * Generated from protobuf enum <code>SALE = 1;</code>
+     * Generated from protobuf enum <code>SELL = 1;</code>
      */
-    const SALE = 1;
+    const SELL = 1;
     /**
      * 同时获取买卖的深度，待实现
      *
@@ -32,7 +32,7 @@ class DepthType
 
     private static $valueToName = [
         self::BUY => 'BUY',
-        self::SALE => 'SALE',
+        self::SELL => 'SELL',
         self::DOUBLE_SIDE => 'DOUBLE_SIDE',
     ];
 

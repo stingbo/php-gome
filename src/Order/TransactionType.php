@@ -16,13 +16,13 @@ class TransactionType
      */
     const BUY = 0;
     /**
-     * Generated from protobuf enum <code>SALE = 1;</code>
+     * Generated from protobuf enum <code>SELL = 1;</code>
      */
-    const SALE = 1;
+    const SELL = 1;
 
     private static $valueToName = [
         self::BUY => 'BUY',
-        self::SALE => 'SALE',
+        self::SELL => 'SELL',
     ];
 
     public static function name($value)
